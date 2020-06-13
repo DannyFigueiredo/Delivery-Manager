@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+	<div class="container" style="margin-top: 10vh; margin-bottom: 5vh" >
+		<div class="card" style="margin-bottom: 2vh">
+			<div class="card-body">
+
+			<form action="/commit/{{productId}}" method="post">
+			  <div class="form-group">
+			    <label for="formGroupExampleInput">Descrição</label>
+			    <input type="text" class="form-control" name="descriptionProduct" id="formGroupExampleInput" value="{{ descriptionProduct }}">
+			  </div>
+			  <div class="form-row">
+			    <div class="col-md-8">
+			        <label for="formGroupExampleInput2">Preço Unitário</label>
+			    	<input type="text" class="form-control" name="unitPriceProduct" id="formGroupExampleInput2" value="{{ unitPriceProduct }}">
+			    </div>
+			    <div class="col-md-4">
+					<label class="my-1 mr-2" for="inlineFormCustomSelectPref">Disponível?</label>
+					<select class="custom-select my-1 mr-sm-2" name="availableProduct" id="inlineFormCustomSelectPref">
+					    <option value="1" selected>Sim</option>
+					    <option value="0">Não</option>
+					</select>
+			    </div>
+			  </div>
+			  <p></p>
+				<div>
+				<button type="submit" class="btn btn-primary btn-md btn-block">
+					Enviar
+				</button>
+				</div>
+
+			</form>
+
+			</div>
+		</div>
+	</div>
+{% endblock %}

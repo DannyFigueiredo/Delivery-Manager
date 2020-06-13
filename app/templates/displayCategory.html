@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+		<!-- Botoes -->
+		<div class="container" style="margin-top: 10vh; margin-bottom: 5vh" >
+
+		  <div class="row align-items-center" style="margin-right: 2vw; margin-bottom: 2vh">
+
+		  		<div class="col-auto mr-auto">
+		  			{% if not isClient %}
+		  			<h4 class="text-bold">Bem vindo!</h4>
+		  			{% else %}
+		  			<h4 class="text-bold">Olá, {{ clientName }}!</b4>
+		  			{% endif %}
+		  		</div>
+		  		<div class="col-auto">
+					<div class="btn-group" role="group">
+					  <!-- Carrinho -->
+					  <a href="/carrinho">
+					  <button type="button" class="btn btn-primary btn-md">
+						  Carrinho 
+						  <span class="badge badge-light">{{ numProducts }}</span>
+						  <span class="sr-only"></span>
+						</button>
+					  </a>
+						<!-- Fim Carrinho -->
+					</div>
+				</div>					
+		  </div>
+			
+
+			<div class="row justify-content-center" >
+				<div class="btn-group" role="group">
+					<!-- Botoes de Filtro de categoria -->
+				  <button type="button" class="btn btn-secondary btn-md">
+				  	<a href="/" class="text-white">Todos</a>
+				  </button>
+				  {% for cat in categoryData %}
+				  <button type="button" class="btn btn-secondary btn-md">
+				  	<a href="/categoria/{{cat[0]}}" class="text-white">{{ cat[0] }}</a></button>
+				  {% endfor %}
+				  <!-- Fim Botoes de Filtro de categoria -->
+				</div>					
+		  </div>
+		</div>
+
+		<div class="alert alert-primary" style="margin-top: 2vh; margin-bottom: 2vh; margin-left: 2vw; margin-right: 2vw; font-size: 20px">
+		  	Produtos da categoria: {{ categoryName }}
+		  </div>
+		</div>
+
+
+		<!-- Lista de Produtos -->		
+		<div class="container" style="margin-top: 5vh; margin-bottom: 5vh" >
+
+
+			<div class="row">
+				{% for prod in productData %}
+				{% for feature in prod %}
+			  <div class="col-sm-4" style="margin-bottom: 2vh">
+			    <div class="card">
+			      <div class="card-body">
+					    <h5 class="card-title">{{ feature[4] }}</h5>
+					    <h6 class="card-subtitle mb-2 text-muted text-right">R$ {{ feature[5] }}0</h6>
+					    <a href="/produto/{{ feature[0] }}" class="card-link">Adicionar</a> 
+				  </div>
+				</div>	
+			  </div>
+			  	{% endfor %}
+				{% endfor %}	
+			</div>
+		</div>
+{% endblock %}

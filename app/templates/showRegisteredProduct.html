@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+	<div class="container" style="margin-top: 10vh; margin-bottom: 5vh" >
+
+		<!-- Lista de Produtos -->		
+		<div class="container" style="margin-top: 5vh; margin-bottom: 5vh" >
+			<div class="row">
+				{% for prod in productData %}
+				{% for feature in prod %}
+				<div class="col-sm-4" style="margin-bottom: 2vh">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">{{ feature[1] }}</h5>
+							<h6 class="card-subtitle mb-2 text-muted text-right">R$ {{ feature[2] }}0</h6>
+							{% if feature[3] == 1 %} 
+								<p class="bg-success text-white text-center">Disponível</p>
+							{% else %} 
+								<p class="bg-danger text-white text-center">Indisponível</p>
+							{% endif %}
+							<a href="/updateProduct/{{feature[0]}}" class="card-link">Editar</a> 
+				  		</div>
+					</div>	
+			  	</div>
+			  	{% endfor %}
+				{% endfor %}
+			</div>
+			<div style="margin-top: 2vh; margin-bottom: 2vh">
+				<a href="/manager" class="text-white">
+					<button type="submit" class="btn btn-primary btn-md btn-block">
+						Voltar ao Menu
+					</button>
+				</a>
+			</div>
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="description" content="Gerenciador de entregas - Desenvolvido para micro empresas de delivery.">
+    <meta name="author" content="Danielle Figueiredo">
+
+    <!-- Bootstrap CSS -->
+    <!--link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Drive-in Carioca</title>
+  </head>
+  <body style="background-color: #adb5bd47">
+
+		<div class="container">
+	  	<!-- Image and text Navbar-->
+			<nav class="navbar fixed-top navbar-dark bg-dark">
+			  <a class="navbar-brand" href="/" style="text-white">
+			    <img src="https://static.wixstatic.com/media/c93dac_57bc6f5f4bb749eea89b8a86069bf2e6~mv2.png/v1/fill/w_560,h_444,al_c,q_85,usm_0.66_1.00_0.01/frutas%20do%20banner.webp" width="30" height="30" class="d-inline-block align-top" alt="">
+			    Drive-in Carioca
+			  </a>
+			</nav>
+		</div>
+
+  	{% block content %}
+  	{% endblock %}
+
+  </body>
+
+<!-- Footer -->
+<footer class="page-footer font-small bg-dark pt-4">
+  <!-- Copyright -->
+  <div class="footer-copyright text-center text-white py-3">© 2020 Copyright - 
+    <a href="https://sites.google.com/view/danielle-figueiredo" style="font-size: 19px"> Danielle Figueiredo </a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+</html>

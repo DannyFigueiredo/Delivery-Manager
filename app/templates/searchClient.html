@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+		<!-- Disposição do Produto -->
+		<div class="container" style="margin-top: 10vh; margin-bottom: 5vh" >
+			
+			<!-- Texto Grande de Bem vindo -->
+			<div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
+		        <div class="col-md-6 px-0">
+	    		    <h1 class="display-4 font-italic">Bem vindo!</h1>
+			        <h3 class="lead my-3">
+			        	Para continuar sua compra, precisamos de sua identificação. Insira abaixo seu número de celular (preferencialmente usado no Whatsapp).
+			        </h3>
+	        	</div>
+	    	</div>
+
+	    	<div class="row justify-content-center">
+	    		<div class="col-md-8">
+	    			<form action="/cliente" method="post">
+
+	    				<div class="col-auto" style="margin-bottom: 3vh">
+					    	<label class="sr-only" for="inlineFormInputGroup"></label>
+					    	
+					    	<div class="input-group mb-2 mr-sm-2">
+					        	<div class="input-group-prepend">
+					        		<div class="input-group-text">
+					        			<i class="fa fa-whatsapp" style="font-size:30px"></i>
+					        		</div>
+					    		</div>
+					        	<input type="text" class="form-control form-control-lg"  name="clientPhone" id="inlineFormInputGroup" placeholder="21999999999">
+					    	</div>
+					    </div>
+
+						<button type="submit" class="btn btn-primary btn-md btn-block">Enviar</button>
+					</form>
+	    		</div>
+		    </div>
+		</div>
+
+
+{% endblock %}

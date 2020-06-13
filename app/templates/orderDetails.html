@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+		<!-- Disposição do Produto -->
+		<div class="container" style="margin-top: 10vh; margin-bottom: 5vh" >
+			<div class="card" style="margin-bottom: 2vh">
+				<div class="card-body">
+					<h5>Data do Pedido: </h5>
+					<h3 class="text-align-center"><b>{{ orderDate }}</b></h3>
+				</div>
+			</div>
+
+			<div class="card" style="margin-bottom: 2vh">
+				<div class="card-header bg-dark text-white">
+				    <h4>Pedido: #{{orderId }}</h4>
+				</div>
+
+				<div class="card-body">
+
+			<!-- Tabela de Pedido -->
+			<div class="table-responsive rounded">
+				<table class="table bg-light" style="margin-bottom: 15px">
+				  <thead class="thead-dark">
+				    <tr>
+				      <th scope="col">Qtd</th>
+				      <th scope="col">Descrição</th>
+				      <th scope="col">R$</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				  	{% for item in cartData %}
+				  	{% for feat in item %}
+				    <tr>
+				      <th class="text-center" scope="row">{{ feat[0] }}</th>
+				      <td>{{ feat[1] }}</td>
+				      <td class="text-right" >{{ feat[2] }}0</td>
+				    </tr>
+				    {% endfor %}
+				    {% endfor %}
+				  </tbody>
+				  <tr>
+				      <th class="text-right" scope="row" colspan="2">Total: R$</th>
+				      <td class="text-right font-weight-bold">{{ totalOrder }}0</td>
+				    </tr>
+				  </tbody>
+				</table>
+			</div>
+			<!-- Fim Cards de Produtos-->
+				</div>
+			</div>
+
+
+			<div class="card" style="margin-bottom: 2vh">
+				<div class="card-header bg-dark text-white">
+				    <h4>Endereço</h4>
+				</div>
+				<div class="card-body">
+				    <h5 class="card-title">Telefone</h5>
+				    <h6 class="card-subtitle mb-2 text-muted">{{ clientPhone }}</h6>
+				    <p></p>
+				    <h5 class="card-title">Nome</h5>
+				    <h6 class="card-subtitle mb-2 text-muted">{{ clientName }}</h6>
+				    <p></p>
+				    <h5 class="card-title">Endereço</h5>
+				    <h6 class="card-subtitle mb-2 text-muted">{{ clientAddress }}</h6>
+				    <p></p>
+				    <h5 class="card-title">Bairro</h5>
+				    <h6 class="card-subtitle mb-2 text-muted">{{ clientNeighborhood }}</h6>
+				    <p></p>
+				    <h5 class="card-title">Ponto de Referência</h5>
+				    <h6 class="card-subtitle mb-2 text-muted">{{ clientLandmark }}</h6>
+				    <p></p>
+				    <h5 class="card-title">Método de Pagamento</h5>
+				    <h6 class="card-subtitle mb-2 text-muted">{{ paymentMethodOrder }}</h6>
+				    <p></p>
+				    <h5 class="card-title">Troco para</h5>
+				    <h6 class="card-subtitle mb-2 text-muted">{{ changeOrder }}</h6>
+				    <p></p>
+				    <h5 class="card-title">Observações do Pedido</h5>
+				    <h6 class="card-subtitle mb-2 text-muted">{{ notesOrder }}</h6>
+				    <p></p>
+				</div>
+			</div>
+
+			<div>
+			<a href="/pedidosHoje" class="text-white">
+				<button type="button" class="btn btn-primary btn-md btn-block">
+					Voltar aos Pedidos
+				</button>
+			</a>
+			</div>
+		</div>
+
+{% endblock %}

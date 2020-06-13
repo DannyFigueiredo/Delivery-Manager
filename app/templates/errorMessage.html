@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+		{% if not shoppingCart %}
+		<!-- Mensagem de Algo Deu Errado -->
+		<div class="container" style="margin-top: 10vh; margin-bottom: 5vh" >
+			<div class="col align-self-center">
+			<div class="card text-white bg-danger mb-3">
+			  <div class="card-body">
+			    <h4 class="card-title font-weight-bold">Algo deu errado!</h4>
+			    <p class="card-text font-weight-bold font-italic">Durante o processo, informações podem ter sido perdidas.</p>
+			    <p>Error: <:/953></p>
+			    <p class="card-text">Entre em contato conosco.</p>
+			    <i class="fa fa-whatsapp" style="font-size:30px"><a href="http://wa.me/5521997452159"></a></i><a href="http://wa.me/5521997452159" style="font-size:25px" class="text-white"> +55 21 9 9745-9927</a>
+			  </div>
+			</div>
+			</div>
+		</div>
+
+		{% else %}
+		<!-- Mensagem de Carrinho sem produto! -->
+		<div class="container" style="margin-top: 10vh; margin-bottom: 5vh">
+			<div class="row">
+				<!--  Imagem de Warning -->
+				<div class="col-sm-4 align-self-center" style="margin-bottom: 2vh; margin-top: 2vh">
+					<img src="url_for('static', filename='/img/errorMessage.png' )" class="img-fluid" alt="Responsive image">
+				</div>
+
+				<!-- Mensagem de erro -->
+				<div class="col-sm-8 align-self-center" style="margin-bottom: 2vh; margin-top: 2vh">
+					<div class="card text-white bg-info mb-3">
+					  <div class="card-body">
+					    <h4 class="card-title font-weight-bold">Parece que você quer acessar o carrinho...</h4>
+					    <p class="card-text font-weight-bold font-italic">Ainda não registramos nenhum produto</p>
+					    <a href="/">
+						    <button type="button" class="btn btn-light">Voltar às Compras</button>
+						  </a>
+					  </div>
+					</div>
+				</div>			
+		  </div>
+		{% endif %}
+		</div>
+
+{% endblock %}

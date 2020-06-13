@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+		<!-- Disposição do Produto -->
+		<div class="container" style="margin-top: 10vh; margin-bottom: 5vh" >
+
+			<div style="padding-top: 5vh; padding-bottom: 5vh">
+				<a href="/pedidosHoje" class="text-white">
+				<button type="button" class="btn btn-success btn-lg btn-block">Pedidos</button>
+				</a>
+			</div>
+
+			<div style="padding-top: 5vh; padding-bottom: 5vh">
+				<a href="/editarProdutos" class="text-white">
+				<button type="button" class="btn btn-info btn-lg btn-block">Editar Produtos</button>
+				</a>
+			</div>
+
+			<div style="padding-top: 5vh; padding-bottom: 5vh">
+				<a href="/adicionarProduto" class="text-white">
+				<button type="button" class="btn btn-secondary btn-lg btn-block">Adicionar Produto</button>
+				</a>
+			</div>
+
+			<div style="padding-top: 5vh; padding-bottom: 5vh">
+				<a href="/historico" class="text-white">
+				<button type="button" class="btn btn-warning btn-lg btn-block">Histórico de Vendas</button>
+				</a>
+			</div>
+
+
+		</div>
+
+
+{% endblock %}

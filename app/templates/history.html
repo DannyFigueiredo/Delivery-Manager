@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+	<div class="container" style="margin-top: 10vh; margin-bottom: 5vh" >
+		<div class="card" style="margin-bottom: 2vh">
+			<div class="card-body">
+				<!-- Tabela de Pedido -->
+				<div class="table-responsive rounded">
+					<table class="table bg-light" style="margin-bottom: 15px">
+						<thead class="thead-dark">
+				    		<tr>
+								<th scope="col">Data</th>
+								<th scope="col">Faturamento</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for day in faturamento %}
+							{% for feat in day %}
+							<tr>
+								<th class="text-center" scope="row">{{ feat[0] }}</th>
+								<td class="text-right">R$ {{ feat[1] }}0</td>
+							</tr>
+							{% endfor %}
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+				<!-- Fim Cards de Produtos-->
+				<div class="text-right">
+					<a href="/manager">Voltar ao Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
