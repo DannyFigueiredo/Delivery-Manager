@@ -14,5 +14,5 @@ app.config.from_object('config')
 #manager.add_command('db', MigrateCommand)
 
 # Comentar esse trecho, caso não seja a primeira vez
-from app.models import tables, dataManipulation
+#from app.models import tables, dataManipulation
 from app.controllers import default
